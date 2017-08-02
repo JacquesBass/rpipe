@@ -44,6 +44,8 @@ project_files <- function()
 	pf$script_name <- sort(list.files('scripts', full.names = TRUE))
 	pf$script_date <- file.info(pf$script_name)$mtime
 
+	if (length(pf$script_name) == 0) stop('Project is empty. (No script files found.)')
+
 	rex <- '^scripts/([0-9]{3})_([[:upper:]]*)_?([[:lower:]][[:lower:][:digit:]_]*)\\.R$'
 
 	ix <- which(!grepl(rex, pf$script_name))
@@ -203,7 +205,7 @@ if (isRStudio) {
 
 	init_folders <- function()
 	{
-		system('mkdir data scripts output')
+		system('mkdir data scripts input output')
 	}
 
 
