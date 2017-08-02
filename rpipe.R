@@ -4,6 +4,12 @@
 options(warn = 2)
 
 
+.free_rpipe_lock. <- function(e)
+{
+    if (file.exists('./.rpipe.lock')) file.remove('./.rpipe.lock')
+}
+
+
 project_files <- function()
 {
     get_title <- function(fn)
@@ -107,6 +113,7 @@ make_all <- function(pf = project_files())
     if (!isLocked) {
         hea <- 1L
         save(hea, file = './.rpipe.lock')
+        reg.finalizer(environment(), .free_rpipe_lock., onexit = TRUE)
     }
 
     force_recalc <- FALSE
@@ -151,7 +158,7 @@ make_all <- function(pf = project_files())
         cat ('\nOnly a simulation was done because the project is locked by another process building it!\n')
         cat ('\n(If no process is building, remove the lock file "./.rpipe.lock" manually and retry.)\n')
     } else {
-        file.remove('./.rpipe.lock')
+        .free_rpipe_lock.()
 
         cat ('\nDone.\n')
     }
@@ -162,7 +169,7 @@ isRStudio <- Sys.getenv("RSTUDIO") == "1"
 
 if (isRStudio) {
 
-    rm(list = unique(gsub('(^make_all$)|(project_files$)', 'isRStudio', ls())))
+    rm(list = unique(gsub('(^make_all$)|(^project_files$)|(^_free_rpipe_lock_$)', 'isRStudio', ls())))
 
     make_all()
 
