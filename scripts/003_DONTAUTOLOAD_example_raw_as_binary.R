@@ -12,12 +12,12 @@
 #>> This applies to all scripts generating files. The file name (one file) and the script name MUST match.
 
 #>> Also, you cannot declare variables or functions in the file since they will not be loaded when there is no need to run the script. That's what
-#>> _GLOBAL_* and _FUNCTION_* scripts are for. They must only have declarations.
+#>> _GLOBAL_* and _FUNCTION_* scripts are for.
 
 
 build_example_raw_as_binary <- function()
 {
-	# data <- read.csv(file = 'input/my_source_xxx.csv')
+	# data <- read.csv(file = 'input/my_source_xxx.csv')	# read, query a DB or whatever.
 
 	data <- data.frame(x = 1:3)
 

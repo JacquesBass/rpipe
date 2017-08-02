@@ -1,10 +1,11 @@
 #> Show things, typically data.
 
 
-#>> Scripts with SHOW (like GLOBAL and FUNCTION) have to expected structure, unlike those who create files.
+#>> Scripts with SHOW (like GLOBAL and FUNCTION) have no expected structure, unlike those who create files.
 
-#>> Like GLOBAL and FUNCTION that only contain dclarations, SHOW scripts should be fast to load. If you need comutations, create a file with them
-#>> and use the SHOW script just to display the results.
+#>> Like GLOBAL and FUNCTION that only contain declarations, SHOW scripts should be fast to load. If you need computation, create a file to store
+#>> their results and use the SHOW script just to display results.
+
 
 cat('\n') # Empty line looks nice here.
 
