@@ -7,7 +7,7 @@
 #>> And this is when rpipe becomes annoyingly pedantic, you have to do it by declaring a function named build_example_raw_as_binary(), this is
 #>> --------------------------------------------------
 #>> build_<lower case part of the script name>, returning whatever you want to save, exactly as done by the last 3 lines that cannot be modified!!
-#>>																										------------------------------------------
+#>>                                                                                                     ------------------------------------------
 
 #>> This applies to all scripts generating files. The file name (one file) and the script name MUST match.
 
@@ -17,11 +17,11 @@
 
 build_example_raw_as_binary <- function()
 {
-	# data <- read.csv(file = 'input/my_source_xxx.csv')	# read, query a DB or whatever.
+    # data <- read.csv(file = 'input/my_source_xxx.csv')    # read, query a DB or whatever.
 
-	data <- data.frame(x = 1:3)
+    data <- data.frame(x = 1:3)
 
-	data
+    data
 }
 
 

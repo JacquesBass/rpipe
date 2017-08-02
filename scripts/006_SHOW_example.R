@@ -13,10 +13,10 @@ cat('\n') # Empty line looks nice here.
 cat('My metaparameter x is :', this_varible_is_global$x, '\n')
 
 #Same with functions.
-cat('Model is			   :', amazing_function('polynomial'), '\n')
+cat('Model is              :', amazing_function('polynomial'), '\n')
 
 #And with data.
-cat('Parameter a		   :', example_model$a, '\n')
-cat('Parameter b		   :', example_model$b, '\n')
+cat('Parameter a           :', example_model$a, '\n')
+cat('Parameter b           :', example_model$b, '\n')
 
 cat('\n') # Empty line looks nice here.

@@ -10,6 +10,6 @@
 #>> There is no imposed structure for OUTPUT scripts. One script can create more than one file.
 
 
-cat('Writing predictions to output/my_preditions.csv ...')			# Nice to recall the output file name to the user.
+cat('Writing predictions to output/my_preditions.csv ...')          # Nice to recall the output file name to the user.
 write.csv(data.frame(x = 1:3), file = 'output/my_preditions.csv')
 cat('Ok.\n')

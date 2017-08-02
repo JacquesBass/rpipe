@@ -7,14 +7,14 @@
 #>> convert_wrong_to_right(): A silly name for an inefficient boolean NOT operator.
 convert_wrong_to_right <- function(wrong)
 {
-	right <- !wrong
+    right <- !wrong
 
-	right
+    right
 }
 
 
 #>> amazing_function(): Self proclaimed amazingness made simple.
 amazing_function <- function(something)
 {
-	paste('Amazing', something, '!')
+    paste('Amazing', something, '!')
 }

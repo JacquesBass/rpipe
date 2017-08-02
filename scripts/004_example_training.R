@@ -9,13 +9,13 @@
 
 build_example_training <- function()
 {
-	# I have to load the required example_raw_as_binary explicitly, since it is DONTAUTOLOAD.
+    # I have to load the required example_raw_as_binary explicitly, since it is DONTAUTOLOAD.
 
-	load(file = 'data/example_raw_as_binary.RData')
+    load(file = 'data/example_raw_as_binary.RData')
 
-	train = data.frame(x_squared = example_raw_as_binary$x^2, stringsAsFactors = FALSE)
+    train = data.frame(x_squared = example_raw_as_binary$x^2, stringsAsFactors = FALSE)
 
-	train
+    train
 }
 
 

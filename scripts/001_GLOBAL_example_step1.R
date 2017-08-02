@@ -8,4 +8,4 @@
 #>> A file whose name starts with _GLOBAL_ is supposed to contain global variables ONLY like metaparameters. It should load very fast!
 
 
-this_varible_is_global <- list(stuff = c('foo', 'bar'), x = 3.14)	# And is available in all scripts whose number is bigger than its own.
+this_varible_is_global <- list(stuff = c('foo', 'bar'), x = 3.14)   # And is available in all scripts whose number is bigger than its own.
