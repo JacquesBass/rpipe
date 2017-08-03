@@ -121,25 +121,23 @@ make_all <- function(pf = project_files())
 
     for (i in 1:length(pf$script_name))
     {
-        doit <- !isLocked | grepl('(_GLOBAL_|_FUNCTION_|_SHOW_)', pf$script_name[i])
-
         current_date <- max(current_date, pf$script_date[i])
 
         if (!pf$is_file[i]) {
             cat ('Processing', pf$script_name[i], '...\n')
 
-            if (doit) source(pf$script_name[i])
+            source(pf$script_name[i])
         } else {
-            if (force_recalc) {
+            if (force_recalc & !isLocked) {
                 cat ('Processing', pf$script_name[i], '...\n')
 
-                if (doit) source(pf$script_name[i])
+                source(pf$script_name[i])
             } else {
-                if (current_date > pf$datafr_date[i])
+                if (current_date > pf$datafr_date[i] & !isLocked)
                 {
                     cat ('Processing', pf$script_name[i], '...\n')
 
-                    if (doit) source(pf$script_name[i])
+                    source(pf$script_name[i])
 
                     force_recalc <- TRUE
                 } else {
