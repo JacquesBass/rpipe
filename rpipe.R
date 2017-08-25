@@ -6,7 +6,7 @@ options(warn = 2)
 
 .free_rpipe_lock. <- function(e)
 {
-    if (file.exists('./.rpipe.lock')) file.remove('./.rpipe.lock')
+    if (file.exists('.rpipe.lock')) file.remove('.rpipe.lock')
 }
 
 
@@ -106,13 +106,15 @@ project_files <- function()
 }
 
 
-make_all <- function(pf = project_files())
+make_all <- function(break_if_no_lock, pf = project_files())
 {
-    isLocked <- file.exists('./.rpipe.lock')
+    isLocked <- file.exists('.rpipe.lock')
 
-    if (!isLocked) {
+    if (isLocked) {
+        if (break_if_no_lock) stop('Could not get lock! If no process is building, remove the lock file ".rpipe.lock" manually and retry.')
+    } else {
         hea <- 1L
-        save(hea, file = './.rpipe.lock')
+        save(hea, file = '.rpipe.lock')
         reg.finalizer(environment(), .free_rpipe_lock., onexit = TRUE)
     }
 
@@ -154,10 +156,8 @@ make_all <- function(pf = project_files())
 
     if (isLocked) {
         cat ('\nOnly a simulation was done because the project is locked by another process building it!\n')
-        cat ('\n(If no process is building, remove the lock file "./.rpipe.lock" manually and retry.)\n')
+        cat ('\n(If no process is building, remove the lock file ".rpipe.lock" manually and retry.)\n')
     } else {
-        .free_rpipe_lock.()
-
         cat ('\nDone.\n')
     }
 }
@@ -169,7 +169,7 @@ if (isRStudio) {
 
     rm(list = unique(gsub('(^make_all$)|(^project_files$)|(^_free_rpipe_lock_$)', 'isRStudio', ls())))
 
-    make_all()
+    make_all(FALSE)
 
 } else {
 
@@ -201,7 +201,9 @@ if (isRStudio) {
     {
         while (TRUE)
         {
-            make_all()
+            make_all(TRUE)
+
+        	.free_rpipe_lock.() # No problem erasing the file as failing to get it (owned by someone else) would fail.
 
             system('inotifywait -e create,close_write,delete -r scripts/ data/')
         }
@@ -234,7 +236,7 @@ if (isRStudio) {
         if (commandArgs(TRUE) == 'help') rpipe_help()
         if (commandArgs(TRUE) == 'init') init_folders()
         if (commandArgs(TRUE) == 'show') map_all()
-        if (commandArgs(TRUE) == 'make') make_all()
+        if (commandArgs(TRUE) == 'make') make_all(FALSE)
         if (commandArgs(TRUE) == 'loop') inifinite_loop()
     } else {
         rpipe_help()
