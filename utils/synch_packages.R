@@ -30,7 +30,7 @@ mine_only <- my_packs[!(my_packs %in% packs)]
 if (length(mine_only) > 0)
 {
     cat('\nConsider adding these.\n\n')
-    print(my_packs)
+    print(mine_only)
 }
 
 todo <- sort(unique(packs[!(packs %in% my_packs)]))
@@ -43,3 +43,4 @@ if (length(todo) > 0)
 
     sapply(todo, install.packages)
 }
+
