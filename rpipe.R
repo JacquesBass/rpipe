@@ -106,7 +106,7 @@ project_files <- function()
 }
 
 
-make_all <- function(break_if_no_lock, pf = project_files())
+make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALSE)
 {
     isLocked <- file.exists('.rpipe.lock')
 
@@ -159,6 +159,8 @@ make_all <- function(break_if_no_lock, pf = project_files())
         cat ('\n(If no process is building, remove the lock file ".rpipe.lock" manually and retry.)\n')
     } else {
         cat ('\nDone.\n')
+
+        if (from_Rstudio) .free_rpipe_lock.()       # Call explicitely, since the environment will not be killed anytime soon.
     }
 }
 
@@ -169,7 +171,7 @@ if (isRStudio) {
 
     rm(list = unique(gsub('(^make_all$)|(^project_files$)|(^_free_rpipe_lock_$)', 'isRStudio', ls())))
 
-    make_all(FALSE)
+    make_all(FALSE, from_Rstudio = TRUE)
 
 } else {
 
@@ -203,7 +205,7 @@ if (isRStudio) {
         {
             make_all(TRUE)
 
-        	.free_rpipe_lock.() # No problem erasing the file as failing to get it (owned by someone else) would fail.
+            .free_rpipe_lock.() # No problem erasing the file as failing to get it (owned by someone else) would fail.
 
             system('inotifywait -e create,close_write,delete -r scripts/ data/')
         }
