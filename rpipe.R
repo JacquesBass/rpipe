@@ -38,6 +38,20 @@ project_files <- function()
         paste(gsub('[^[:print:]]', '', gsub(rex, '\\1', txt[ix])), collapse = '\\')
     }
 
+    get_csv_name <- function(fn)
+    {
+        txt <- readLines(fn)
+
+        last <- txt[length(txt)]
+
+        rex <- gsub('^scripts/([0-9]{3})_([[:upper:]]*)_?([[:lower:]][[:lower:][:digit:]_]*)\\.R$', '\\3', fn)
+        rex <- paste0('^write_', rex, '\\(\'(output/.*)\'\\)$')
+
+        if (!grepl(rex, last)) stop(paste('The last line in the output file', fn, 'must match', rex))
+
+        gsub(rex, '\\1', last)
+    }
+
     check_last_three <- function(fn, last)
     {
         txt <- readLines(fn)
@@ -51,6 +65,8 @@ project_files <- function()
     pf$script_date <- file.info(pf$script_name)$mtime
 
     if (length(pf$script_name) == 0) stop('Project is empty. (No script files found.)')
+
+    L <- length(pf$script_name)
 
     rex <- '^scripts/([0-9]{3})_([[:upper:]]*)_?([[:lower:]][[:lower:][:digit:]_]*)\\.R$'
 
@@ -69,14 +85,16 @@ project_files <- function()
     pf$description <- sapply(pf$script_name, get_description)
     names(pf$description) <- NULL
 
-    pf$name    <- gsub(rex, '\\3', pf$script_name)
-    pf$is_file <- gsub(rex, '\\2', pf$script_name) %in% c('', 'DONTAUTOLOAD')
-    pf$number  <- as.integer(gsub(rex, '\\1', pf$script_name))
+    pf$name <- gsub(rex, '\\3', pf$script_name)
+
+    pf$number <- as.integer(gsub(rex, '\\1', pf$script_name))
 
     ix <- which(duplicated(pf$number))
     if (length(ix) > 0) stop(paste('Duplicated script number:', pf$number[duplicated(pf$number)], collapse = '\n'))
 
-    L <- length(pf$script_name)
+    pf$class <- rep('code', L)
+    pf$class[gsub(rex, '\\2', pf$script_name) %in% c('', 'DONTAUTOLOAD')] <- 'file'
+    pf$class[gsub(rex, '\\2', pf$script_name) == 'OUTPUT'] <- 'outp'
 
     pf$datafr_name <- rep('', L)
     pf$datafr_date <- rep(strptime('19800101', format = '%Y%m%d'), L)
@@ -85,7 +103,7 @@ project_files <- function()
 
     for (i in 1:L)
     {
-        if (pf$is_file[i])
+        if (pf$class[i] == 'file')
         {
             pf$datafr_name[i] <- paste0('data/', pf$name[i], '.RData')
 
@@ -96,11 +114,21 @@ project_files <- function()
 
             if (file.exists(pf$datafr_name[i])) pf$datafr_date[i] <- file.info(pf$datafr_name[i])$mtime
         }
+        if (pf$class[i] == 'outp')
+        {
+            pf$datafr_name[i] <- get_csv_name(pf$script_name[i])
+
+            if (file.exists(pf$datafr_name[i])) pf$datafr_date[i] <- file.info(pf$datafr_name[i])$mtime
+        }
     }
 
     lf <- list.files('data', full.names = TRUE)
     ix <- which(!(lf %in% pf$datafr_name))
     if (any(ix)) stop(paste('Untraced files in data/', lf[ix], collapse = '\n'))
+
+    lf <- list.files('output', full.names = TRUE)
+    ix <- which(!(lf %in% pf$datafr_name))
+    if (any(ix)) stop(paste('Untraced files in output/', lf[ix], collapse = '\n'))
 
     pf
 }
@@ -125,31 +153,36 @@ make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALS
     {
         current_date <- max(current_date, pf$script_date[i])
 
-        if (!pf$is_file[i]) {
+        if (pf$class[i] == 'code') {
             cat ('Processing', pf$script_name[i], '...\n')
 
             source(pf$script_name[i])
-        } else {
-            if (force_recalc & !isLocked) {
+        }
+
+        if (pf$class[i] == 'file') {
+            if ((force_recalc | current_date > pf$datafr_date[i]) & !isLocked) {
+                cat ('Processing', pf$script_name[i], '...\n')
+
+                source(pf$script_name[i])
+
+                force_recalc <- TRUE
+            } else {
+                if (!grepl('_DONTAUTOLOAD_', pf$script_name[i]))
+                {
+                    cat ('Loading', pf$datafr_name[i], '...\n')
+
+                    load(pf$datafr_name[i], envir = .GlobalEnv)
+                }
+            }
+        }
+
+        if (pf$class[i] == 'outp') {
+            if ((force_recalc | current_date > pf$datafr_date[i]) & !isLocked) {
                 cat ('Processing', pf$script_name[i], '...\n')
 
                 source(pf$script_name[i])
             } else {
-                if (current_date > pf$datafr_date[i] & !isLocked)
-                {
-                    cat ('Processing', pf$script_name[i], '...\n')
-
-                    source(pf$script_name[i])
-
-                    force_recalc <- TRUE
-                } else {
-                    if (!grepl('_DONTAUTOLOAD_', pf$script_name[i]))
-                    {
-                        cat ('Loading', pf$datafr_name[i], '...\n')
-
-                        load(pf$datafr_name[i], envir = .GlobalEnv)
-                    }
-                }
+                cat ('Skipped output', pf$script_name[i], '(nothing changed since last execution)\n')
             }
         }
     }
@@ -178,7 +211,7 @@ if (isRStudio) {
     map_all <- function(write_file = FALSE, pf = project_files())
     {
         if (write_file) {
-            df <- data.frame(name = pf$name, is_file = pf$is_file, title = pf$title, description = pf$description, stringsAsFactors = FALSE)
+            df <- data.frame(name = pf$name, class = pf$class, title = pf$title, description = pf$description, stringsAsFactors = FALSE)
 
             rownames(df) <- pf$number
 
@@ -186,7 +219,7 @@ if (isRStudio) {
             write.table(df, './project_map.csv', quote = FALSE, sep = '\t')
             cat('Ok.\n')
         } else {
-            df <- data.frame(NAME = pf$name, IS_FILE = pf$is_file, TITLE = pf$title, stringsAsFactors = FALSE)
+            df <- data.frame(NAME = pf$name, CLASS = pf$class, TITLE = pf$title, stringsAsFactors = FALSE)
 
             rownames(df) <- pf$number
 
