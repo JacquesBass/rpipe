@@ -250,6 +250,7 @@ if (isRStudio) {
 
         now <- Sys.time()
 
+        cat('\nHashing data files ... (may take some time) ...')
         for (i in 1:length(pf$script_name))
         {
             current_date <- max(current_date, pf$script_date[i])
@@ -283,6 +284,7 @@ if (isRStudio) {
                 }
             }
         }
+        cat(' Ok.\n\n')
 
         df <- data.frame(NAME      = pf$name,
                          RECENCY_H = sprintf('%1.4f', now - pf$script_date),
