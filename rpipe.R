@@ -239,11 +239,18 @@ if (isRStudio) {
 
     make_info <- function(pf = project_files())
     {
+        recency <- function(dt)
+        {
+            dt        <- now - dt
+            units(dt) <- 'hours'
+
+            sprintf('%8.4f', dt)
+        }
         L <- length(pf$script_name)
 
-        pf$hash    <- rep('--', L)
+        pf$hash    <- rep('    --', L)
         pf$build   <- rep('Skip', L)
-        pf$recency <- rep('--', L)
+        pf$recency <- rep('    --', L)
 
         force_recalc <- FALSE
         current_date <- pf$script_date[1]
@@ -270,7 +277,7 @@ if (isRStudio) {
                 if (file.exists(pf$datafr_name[i]))
                 {
                     pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
-                    pf$recency[i] <- sprintf('%1.4f', now - pf$datafr_date[i])
+                    pf$recency[i] <- recency(pf$datafr_date[i])
                 }
             }
 
@@ -280,14 +287,14 @@ if (isRStudio) {
                 if (file.exists(pf$datafr_name[i]))
                 {
                     pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
-                    pf$recency[i] <- sprintf('%1.4f', now - pf$datafr_date[i])
+                    pf$recency[i] <- recency(pf$datafr_date[i])
                 }
             }
         }
         cat(' Ok.\n\n')
 
         df <- data.frame(NAME      = pf$name,
-                         RECENCY_H = sprintf('%1.4f', now - pf$script_date),
+                         RECENCY_H = recency(pf$script_date),
                          CLASS     = pf$class,
                          FILE      = pf$datafr_name,
                          RECENCY   = pf$recency,
