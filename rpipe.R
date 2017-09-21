@@ -4,12 +4,14 @@
 options(warn = 2)
 
 
+#>> A finalizer to remove the lock file when .GlobalEnv is destroyed.
 .free_rpipe_lock. <- function(e)
 {
     if (file.exists('.rpipe.lock')) file.remove('.rpipe.lock')
 }
 
 
+#>> Verifies all assertions about the project and returns a list with all the project data: names, dates, classes, etc.
 project_files <- function()
 {
     get_title <- function(fn)
@@ -134,6 +136,7 @@ project_files <- function()
 }
 
 
+#>> Make the project: Once, in a loop or from RStudio.
 make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALSE)
 {
     isLocked <- file.exists('.rpipe.lock')
@@ -193,10 +196,12 @@ make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALS
     } else {
         cat ('\nDone.\n')
 
-        if (from_Rstudio) .free_rpipe_lock.()       # Call explicitely, since the environment will not be killed anytime soon.
+        if (from_Rstudio) .free_rpipe_lock.()       # Call explicitly since the environment will not be killed anytime soon.
     }
 }
 
+
+#>> Entry point: All functions not needed for building are conditionally defined to avoid declaring useless things when in RStudio.
 
 isRStudio <- Sys.getenv("RSTUDIO") == "1"
 
@@ -208,7 +213,7 @@ if (isRStudio) {
 
 } else {
 
-    map_all <- function(write_file = FALSE, pf = project_files())
+    show_project <- function(write_file = FALSE, pf = project_files())
     {
         if (write_file) {
             df <- data.frame(name = pf$name, class = pf$class, title = pf$title, description = pf$description, stringsAsFactors = FALSE)
@@ -229,6 +234,71 @@ if (isRStudio) {
 
             print(df, right = F)
         }
+    }
+
+
+    make_info <- function(pf = project_files())
+    {
+        L <- length(pf$script_name)
+
+        pf$hash    <- rep('--', L)
+        pf$build   <- rep('Skip', L)
+        pf$recency <- rep('--', L)
+
+        force_recalc <- FALSE
+        current_date <- pf$script_date[1]
+
+        now <- Sys.time()
+
+        for (i in 1:length(pf$script_name))
+        {
+            current_date <- max(current_date, pf$script_date[i])
+
+            if (pf$class[i] == 'code') pf$build[i] <- 'Run'
+
+            if (pf$class[i] == 'file') {
+
+                if (force_recalc | current_date > pf$datafr_date[i]) {
+                    pf$build[i] <- 'Build'
+
+                    force_recalc <- TRUE
+                } else {
+                    if (!grepl('_DONTAUTOLOAD_', pf$script_name[i])) pf$build[i] <- 'Load'
+                }
+
+                if (file.exists(pf$datafr_name[i]))
+                {
+                    pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+                    pf$recency[i] <- sprintf('%1.4f', now - pf$datafr_date[i])
+                }
+            }
+
+            if (pf$class[i] == 'outp') {
+                if (force_recalc | current_date > pf$datafr_date[i]) pf$build[i] <- 'Build'
+
+                if (file.exists(pf$datafr_name[i]))
+                {
+                    pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+                    pf$recency[i] <- sprintf('%1.4f', now - pf$datafr_date[i])
+                }
+            }
+        }
+
+        df <- data.frame(NAME      = pf$name,
+                         RECENCY_H = sprintf('%1.4f', now - pf$script_date),
+                         CLASS     = pf$class,
+                         FILE      = pf$datafr_name,
+                         RECENCY   = pf$recency,
+                         HASH      = pf$hash,
+                         BUILD     = pf$build, stringsAsFactors = FALSE)
+
+        rownames(df) <- pf$number
+
+        err <- try(sx <- gsub('^.*columns[[:blank:]]*([0-9]+)[[:blank:]]*;.*$', '\\1', system('stty -a | head -1', intern = T)), silent = TRUE)
+
+        if (class(err) != 'try-error' && length(sx) == 1) options(width = as.integer(sx))
+
+        print(df, right = F)
     }
 
 
@@ -254,12 +324,13 @@ if (isRStudio) {
     rpipe_help <- function()
     {
         cat('Usage: rpipe.R <cmd>\n\n')
-        cat('  file : Writes results to ./project_map.csv including details section.\n')
+        cat('  file : Writes project steps to "./project_map.csv" including descriptions.\n')
         cat('  help : Shows this help.\n')
-        cat('  init : Creates empty folders: data, scripts, output\n')
-        cat('  loop : Make in an infinite loop waiting for file events to repeat.\n')
-        cat('  make : Make once.\n')
-        cat('  show : Prints results to console skipping details section.\n')
+        cat('  info : Show project make details, including dates and hashes, without doing anything.\n')
+        cat('  init : Creates empty folders: data, scripts, input, output\n')
+        cat('  loop : An infinite loop of: "make", "wait for file events", "repeat".\n')
+        cat('  make : Run the "make" just once.\n')
+        cat('  show : Prints project steps to console skipping descriptions.\n')
 
         cat('\n')
     }
@@ -267,10 +338,11 @@ if (isRStudio) {
 
     if (length(commandArgs(TRUE)) == 1)
     {
-        if (commandArgs(TRUE) == 'file') map_all(T)
+        if (commandArgs(TRUE) == 'file') show_project(T)
         if (commandArgs(TRUE) == 'help') rpipe_help()
+        if (commandArgs(TRUE) == 'info') make_info()
         if (commandArgs(TRUE) == 'init') init_folders()
-        if (commandArgs(TRUE) == 'show') map_all()
+        if (commandArgs(TRUE) == 'show') show_project()
         if (commandArgs(TRUE) == 'make') make_all(FALSE)
         if (commandArgs(TRUE) == 'loop') inifinite_loop()
     } else {
