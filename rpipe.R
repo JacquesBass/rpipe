@@ -237,7 +237,7 @@ if (isRStudio) {
     }
 
 
-    make_info <- function(pf = project_files())
+    make_info <- function(calc_hash = TRUE, pf = project_files())
     {
         recency <- function(dt)
         {
@@ -257,7 +257,7 @@ if (isRStudio) {
 
         now <- Sys.time()
 
-        cat('\nHashing data files ... (may take some time) ...')
+        if (calc_hash) cat('\nHashing data files ... (may take some time) ...')
         for (i in 1:length(pf$script_name))
         {
             current_date <- max(current_date, pf$script_date[i])
@@ -276,7 +276,8 @@ if (isRStudio) {
 
                 if (file.exists(pf$datafr_name[i]))
                 {
-                    pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+                    if (calc_hash) pf$hash[i] <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+
                     pf$recency[i] <- recency(pf$datafr_date[i])
                 }
             }
@@ -286,21 +287,23 @@ if (isRStudio) {
 
                 if (file.exists(pf$datafr_name[i]))
                 {
-                    pf$hash[i]    <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+                    if (calc_hash) pf$hash[i] <- gsub('^(.{10}).*$', '\\1', digest::digest(pf$datafr_name[i], file = TRUE))
+
                     pf$recency[i] <- recency(pf$datafr_date[i])
                 }
             }
         }
-        cat(' Ok.\n\n')
+        if (calc_hash) cat(' Ok.\n\n')
 
-        df <- data.frame(NAME      = pf$name,
-                         RECENCY_H = recency(pf$script_date),
-                         CLASS     = pf$class,
-                         FILE      = pf$datafr_name,
-                         RECENCY   = pf$recency,
-                         HASH      = pf$hash,
-                         BUILD     = pf$build, stringsAsFactors = FALSE)
+        df <- data.frame(pf$name,
+                         recency(pf$script_date),
+                         pf$class,
+                         pf$datafr_name,
+                         pf$recency,
+                         pf$hash,
+                         pf$build, stringsAsFactors = FALSE)
 
+        colnames(df) <- c('NAME', 'RECENCY(h)', 'CLASS', 'DATA_FILE', 'RECENCY(h)', 'DATA_HASH', 'BUILD')
         rownames(df) <- pf$number
 
         err <- try(sx <- gsub('^.*columns[[:blank:]]*([0-9]+)[[:blank:]]*;.*$', '\\1', system('stty -a | head -1', intern = T)), silent = TRUE)
@@ -335,6 +338,7 @@ if (isRStudio) {
         cat('Usage: rpipe.R <cmd>\n\n')
         cat('  file : Writes project steps to "./project_map.csv" including descriptions.\n')
         cat('  help : Shows this help.\n')
+        cat('  fast : Same as "info" without computing data file hashes.\n')
         cat('  info : Show project make details, including dates and hashes, without doing anything.\n')
         cat('  init : Creates empty folders: data, scripts, input, output\n')
         cat('  loop : An infinite loop of: "make", "wait for file events", "repeat".\n')
@@ -347,8 +351,9 @@ if (isRStudio) {
 
     if (length(commandArgs(TRUE)) == 1)
     {
-        if (commandArgs(TRUE) == 'file') show_project(T)
+        if (commandArgs(TRUE) == 'file') show_project(TRUE)
         if (commandArgs(TRUE) == 'help') rpipe_help()
+        if (commandArgs(TRUE) == 'fast') make_info(FALSE)
         if (commandArgs(TRUE) == 'info') make_info()
         if (commandArgs(TRUE) == 'init') init_folders()
         if (commandArgs(TRUE) == 'show') show_project()
