@@ -40,13 +40,12 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'AzureML', 'backp
            'rbokeh', 'RColorBrewer', 'Rcpp', 'RcppArmadillo', 'RcppEigen', 'RcppRoll', 'RCurl', 'readr', 'recipes', 'registry', 'rematch', 'reports',
            'reshape2', 'reticulate', 'rgexf', 'RgoogleMaps', 'rjazz', 'rjson', 'RJSONIO', 'rlang', 'rmarkdown', 'rngtools', 'ROAuth', 'robustbase',
            'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient', 'Rserve', 'RSQLite', 'rstudioapi', 'RUnit',
-           'rversions', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d', 'segmented', 'shiny', 'slam', 'sn', 'SnowballC', 'sourcetools', 'sp',
-           'spam', 'SparseM', 'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr',
-           'strucchange', 'survival', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'textcat', 'tfruns', 'TH.data', 'tibble',
-           'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'tree', 'treeClust', 'triangle', 'trimcluster',
-           'tseries', 'TTR', 'twitteR', 'USAboundaries', 'USAboundariesData', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork',
-           'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zoo')
-
+           'rversions', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d', 'segmented', 'sfsmisc', 'shiny', 'slam', 'sn', 'SnowballC', 'sourcetools',
+           'sp', 'spam', 'SparseM', 'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi',
+           'stringr', 'strucchange', 'survival', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'textcat', 'tfruns', 'TH.data',
+           'tibble', 'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'tree', 'treeClust', 'triangle',
+           'trimcluster', 'tseries', 'TTR', 'twitteR', 'USAboundaries', 'USAboundariesData', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite',
+           'visNetwork', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zoo')
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
 if (any(packs != sort(packs))) stop('Wrong order')
