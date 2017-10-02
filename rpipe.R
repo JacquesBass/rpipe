@@ -5,7 +5,7 @@ options(warn = 2)
 
 
 #>> A finalizer to remove the lock file when .GlobalEnv is destroyed.
-.free_rpipe_lock. <- function(e)
+.free_rpipe_lock. <- function()
 {
     if (file.exists('.rpipe.lock')) file.remove('.rpipe.lock')
 }
