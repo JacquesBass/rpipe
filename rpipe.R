@@ -139,7 +139,7 @@ project_files <- function()
 #>> Make the project: Once, in a loop or from RStudio.
 make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALSE)
 {
-    isLocked <- file.exists('.rpipe.lock')
+    isLocked <- file.exists('.rpipe.lock') | from_Rstudio
 
     if (isLocked) {
         if (break_if_no_lock) stop('Could not get lock! If no process is building, remove the lock file ".rpipe.lock" manually and retry.')
@@ -192,11 +192,11 @@ make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALS
 
     if (isLocked) {
         cat ('\nOnly a simulation was done because the project is locked by another process building it!\n')
-        cat ('\n(If no process is building, remove the lock file ".rpipe.lock" manually and retry.)\n')
+
+        if (from_Rstudio) cat ('\n(This is default behavior when called from RStudio.)\n')
+        else              cat ('\n(If no process is building, remove the lock file ".rpipe.lock" manually and retry.)\n')
     } else {
         cat ('\nDone.\n')
-
-        if (from_Rstudio) .free_rpipe_lock.()       # Call explicitly since the environment will not be killed anytime soon.
     }
 }
 
