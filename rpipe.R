@@ -117,7 +117,7 @@ project_files <- function()
             if (!check_last_three(pf$script_name[i], build)) {
                 cat('Invalid script file creation in :', pf$script_name[i], '\n\n')
                 cat('The last (including the void line) three lines should be:\n\n')
-                cat(paste(build, collapse = '\n'))
+                cat(paste(build, collapse = '\n'), '\n\n')
 
                 stop('Edit the file and retry.')
             }
