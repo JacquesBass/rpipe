@@ -58,6 +58,8 @@ project_files <- function()
     {
         txt <- readLines(fn)
 
+        if (length(txt) < 5) return (FALSE)
+
         !any(txt[(length(txt) - 2):length(txt)] != last)
     }
 
@@ -112,7 +114,13 @@ project_files <- function()
             build[1] <- paste0(pf$name[i], ' <- build_', pf$name[i], '()')
             build[3] <- paste0('save(', pf$name[i], ', file = \'', pf$datafr_name[i], '\')')
 
-            if (!check_last_three(pf$script_name[i], build)) stop(paste('Invalid script file creation in :', pf$script_name[i]))
+            if (!check_last_three(pf$script_name[i], build)) {
+                cat('Invalid script file creation in :', pf$script_name[i], '\n\n')
+                cat('The last (including the void line) three lines should be:\n\n')
+                cat(paste(build, collapse = '\n'))
+
+                stop('Edit the file and retry.')
+            }
 
             if (file.exists(pf$datafr_name[i])) pf$datafr_date[i] <- file.info(pf$datafr_name[i])$mtime
         }
