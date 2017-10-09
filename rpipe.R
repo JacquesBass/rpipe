@@ -217,6 +217,8 @@ if (isRStudio) {
 
     rm(list = unique(gsub('(^make_all$)|(^project_files$)|(^_free_rpipe_lock_$)', 'isRStudio', ls())))
 
+    if (length(list.files('scripts', )) == 0 & length(list.files('pipeline', )) > 0) setwd(paste0(getwd(), '/pipeline'))
+
     make_all(FALSE, from_Rstudio = TRUE)
 
 } else {
