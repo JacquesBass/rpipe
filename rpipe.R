@@ -217,7 +217,7 @@ if (isRStudio) {
 
     rm(list = unique(gsub('(^make_all$)|(^project_files$)|(^_free_rpipe_lock_$)', 'isRStudio', ls())))
 
-    if (length(list.files('scripts', )) == 0 & length(list.files('pipeline', )) > 0) setwd(paste0(getwd(), '/pipeline'))
+    if (length(list.files('scripts')) == 0 & length(list.files('pipeline')) > 0) setwd(paste0(getwd(), '/pipeline'))
 
     make_all(FALSE, from_Rstudio = TRUE)
 
@@ -346,9 +346,12 @@ if (isRStudio) {
     rpipe_help <- function()
     {
         cat('Usage: rpipe.R <cmd>\n\n')
+
+        cat(' <cmd>   DESCRIPTION\n')
+        cat(' -------------------\n')
+        cat('  fast : Same as "info" without computing data file hashes.\n')
         cat('  file : Writes project steps to "./project_map.csv" including descriptions.\n')
         cat('  help : Shows this help.\n')
-        cat('  fast : Same as "info" without computing data file hashes.\n')
         cat('  info : Show project make details, including dates and hashes, without doing anything.\n')
         cat('  init : Creates empty folders: data, scripts, input, output\n')
         cat('  loop : An infinite loop of: "make", "wait for file events", "repeat".\n')
@@ -359,16 +362,19 @@ if (isRStudio) {
     }
 
 
-    if (length(commandArgs(TRUE)) == 1)
+    dofn <- list(fast = function() make_info(FALSE),
+                 file = function() show_project(TRUE),
+                 info = function() make_info(),
+                 init = function() init_folders(),
+                 loop = function() inifinite_loop(),
+                 make = function() make_all(FALSE),
+                 show = function() show_project())
+
+    args <- commandArgs(TRUE)
+
+    if (length(args) == 1)
     {
-        if (commandArgs(TRUE) == 'file') show_project(TRUE)
-        if (commandArgs(TRUE) == 'help') rpipe_help()
-        if (commandArgs(TRUE) == 'fast') make_info(FALSE)
-        if (commandArgs(TRUE) == 'info') make_info()
-        if (commandArgs(TRUE) == 'init') init_folders()
-        if (commandArgs(TRUE) == 'show') show_project()
-        if (commandArgs(TRUE) == 'make') make_all(FALSE)
-        if (commandArgs(TRUE) == 'loop') inifinite_loop()
+        if (is.null(dofn[[args]])) rpipe_help() else dofn[[args]]()
     } else {
         rpipe_help()
     }
