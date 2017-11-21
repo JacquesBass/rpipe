@@ -34,20 +34,21 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'AzureML', 'backp
            'locpol', 'logistf', 'lpSolve', 'lsa', 'lubridate', 'magic', 'magrittr', 'manipulate', 'mapproj', 'maps', 'maptools', 'markdown', 'MASS',
            'Matrix', 'MatrixModels', 'maxent', 'mboost', 'mcclust', 'mclust', 'memoise', 'methods', 'Metrics', 'mgcv', 'mice', 'mime', 'miniCRAN',
            'minqa', 'misc3d', 'mnormt', 'ModelMetrics', 'modeltools', 'multcomp', 'munsell', 'mvtnorm', 'neuralnet', 'NeuralNetTools', 'nlme',
-           'nloptr', 'NLP', 'NMF', 'nnet', 'nnls', 'numbers', 'numDeriv', 'openssl', 'osmar', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest',
-           'pdc', 'pkgconfig', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'plyr', 'png', 'prabclus', 'praise', 'pROC', 'processx',
-           'prodlim', 'profileModel', 'proto', 'proxy', 'pryr', 'psych', 'purrr', 'pwr', 'qap', 'qdapDictionaries', 'qdapRegex', 'qdapTools',
-           'quadprog', 'Quandl', 'quantmod', 'quantreg', 'quickcheck', 'qvcalc', 'R6', 'randomForest', 'RANN', 'raster', 'rbenchmark', 'rbokeh',
-           'RColorBrewer', 'Rcpp', 'RcppArmadillo', 'RcppEigen', 'RcppExamples', 'RcppRoll', 'RCurl', 'readr', 'recipes', 'recommenderlab',
+           'nloptr', 'NLP', 'NMF', 'nnet', 'nnls', 'nplr', 'numbers', 'numDeriv', 'openssl', 'osmar', 'parallel', 'party', 'partykit', 'pbapply',
+           'pbkrtest', 'pdc', 'pkgconfig', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'plyr', 'png', 'prabclus', 'praise', 'pROC',
+           'processx', 'prodlim', 'profileModel', 'proto', 'proxy', 'pryr', 'psych', 'purrr', 'pwr', 'qap', 'qdapDictionaries', 'qdapRegex',
+           'qdapTools', 'quadprog', 'Quandl', 'quantmod', 'quantreg', 'quickcheck', 'qvcalc', 'R6', 'randomForest', 'RANN', 'raster', 'rbenchmark',
+           'rbokeh', 'RColorBrewer', 'Rcpp', 'RcppArmadillo', 'RcppEigen', 'RcppExamples', 'RcppRoll', 'RCurl', 'readr', 'recipes', 'recommenderlab',
            'registry', 'rematch', 'reports', 'reshape', 'reshape2', 'reticulate', 'rgexf', 'RgoogleMaps', 'rjazz', 'rjson', 'RJSONIO', 'rlang',
            'rmarkdown', 'Rmixmod', 'rngtools', 'ROAuth', 'robustbase', 'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis',
-           'RSclient', 'Rserve', 'RSQLite', 'rstudioapi', 'RTextTools', 'RUnit', 'rversions', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d',
-           'segmented', 'seriation', 'sfsmisc', 'shiny', 'slam', 'sn', 'snow', 'SnowballC', 'sourcetools', 'sp', 'spa', 'spam', 'SparseM', 'spatial',
-           'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival',
-           'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr',
-           'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'tree', 'treeClust', 'triangle', 'trimcluster', 'tseries',
-           'tsne', 'TSP', 'TTR', 'twitteR', 'upclass', 'USAboundaries', 'USAboundariesData', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite',
-           'visNetwork', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zipfR', 'zoo')
+           'RSclient', 'Rserve', 'RSQLite', 'rstudioapi', 'RTextTools', 'RUnit', 'rversions', 'rvest', 'rworldmap', 'sandwich', 'scales',
+           'scatterplot3d', 'segmented', 'selectr', 'seriation', 'sfsmisc', 'shiny', 'slam', 'sn', 'snow', 'SnowballC', 'sourcetools', 'sp', 'spa',
+           'spam', 'SparseM', 'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr',
+           'strucchange', 'survival', 'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'textcat', 'tfruns', 'TH.data',
+           'tibble', 'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'tree', 'treeClust', 'triangle',
+           'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'twitteR', 'upclass', 'USAboundaries', 'USAboundariesData', 'utils', 'uuid', 'vcd',
+           'viridis', 'viridisLite', 'visNetwork', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'XML', 'xml2', 'xtable', 'xts', 'yaml',
+           'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
