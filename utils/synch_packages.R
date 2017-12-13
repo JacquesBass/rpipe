@@ -44,12 +44,13 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient', 'Rserve', 'RSpectra', 'RSQLite', 'rstudioapi',
            'RTextTools', 'RUnit', 'rversions', 'rvest', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr',
            'seriation', 'sfsmisc', 'shiny', 'signal', 'slam', 'sn', 'snow', 'SnowballC', 'sourcetools', 'sp', 'spa', 'spacyr', 'spam', 'SparseM',
-           'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange',
-           'survival', 'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'textcat', 'tfruns', 'TH.data', 'tibble',
-           'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree', 'treeClust', 'triangle',
-           'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'USAboundaries', 'USAboundariesData', 'utils', 'uuid',
-           'vcd', 'viridis', 'viridisLite', 'visNetwork', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'XML', 'xml2', 'xtable', 'xts', 'yaml',
-           'zipfR', 'zoo')
+           'sparsepp', 'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr',
+           'strucchange', 'survival', 'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns',
+           'TH.data', 'tibble', 'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree',
+           'treeClust', 'triangle', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'USAboundaries',
+           'USAboundariesData', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost',
+           'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zipfR', 'zoo')
+
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
 if (any(packs != sort(packs))) stop('Wrong order')
