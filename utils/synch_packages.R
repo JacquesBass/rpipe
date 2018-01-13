@@ -44,12 +44,12 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'robustbase', 'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient', 'Rserve', 'RSpectra', 'RSQLite',
            'rstudioapi', 'RTextTools', 'RUnit', 'rversions', 'rvest', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d', 'seewave', 'segmented',
            'selectr', 'seriation', 'sfsmisc', 'shiny', 'signal', 'slam', 'sn', 'snow', 'SnowballC', 'sourcetools', 'sp', 'spa', 'spacyr', 'spam',
-           'SparseM', 'sparsepp', 'spatial', 'splines', 'splus2R', 'sqldf', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi', 'stringr',
-           'strucchange', 'survival', 'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns',
-           'TH.data', 'tibble', 'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree',
-           'treeClust', 'triangle', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'USAboundaries',
-           'USAboundariesData', 'utf8', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa',
-           'wordcloud', 'xgboost', 'xgboostExplainer', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zipfR', 'zoo')
+           'SparseM', 'sparsepp', 'spatial', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'stats', 'stats4', 'streamR', 'stringdist', 'stringi',
+           'stringr', 'strucchange', 'survival', 'tabplot', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec',
+           'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools',
+           'transcribeR', 'tree', 'treeClust', 'triangle', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass',
+           'USAboundaries', 'USAboundariesData', 'utf8', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker',
+           'withr', 'wmtsa', 'wordcloud', 'xgboost', 'xgboostExplainer', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
