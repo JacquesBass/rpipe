@@ -51,9 +51,9 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival', 'tabplot', 'tau', 'tcltk',
            'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect',
            'tidyverse', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree', 'treeClust', 'triangle', 'trimcluster',
-           'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'USAboundaries', 'USAboundariesData', 'utf8', 'utils', 'uuid', 'vcd',
-           'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost', 'xgboostExplainer', 'XML',
-           'xml2', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
+           'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData', 'utf8', 'utils',
+           'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost',
+           'xgboostExplainer', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
