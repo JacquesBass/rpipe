@@ -47,12 +47,12 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient', 'Rserve', 'RSpectra', 'RSQLite', 'rstudioapi', 'RTextTools',
            'Rttf2pt1', 'RUnit', 'rversions', 'rvest', 'rvg', 'rworldmap', 'sandwich', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr',
            'seriation', 'sfsmisc', 'shiny', 'shinyBS', 'shinydashboard', 'shinyjs', 'signal', 'slam', 'sn', 'sna', 'snow', 'SnowballC', 'sourcetools',
-           'sp', 'spa', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'statnet.common',
-           'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival', 'tabplot', 'tau', 'tcltk',
-           'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect',
-           'tidyverse', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree', 'treeClust', 'triangle', 'trimcluster',
-           'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData', 'utf8', 'utils',
-           'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost',
+           'sp', 'spa', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spData', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs',
+           'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival', 'tabplot',
+           'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr',
+           'tidyselect', 'tidyverse', 'timeDate', 'timeline', 'timeSeries', 'titanic', 'tm', 'tools', 'transcribeR', 'tree', 'treeClust', 'triangle',
+           'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData',
+           'utf8', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xgboost',
            'xgboostExplainer', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
 
 
