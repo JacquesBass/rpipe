@@ -38,7 +38,7 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR', 'multcomp', 'munsell', 'mvtnorm', 'ndjson', 'network', 'neuralnet',
            'NeuralNetTools', 'ngram', 'nlme', 'nloptr', 'NLP', 'NMF', 'nnet', 'nnls', 'nplr', 'numbers', 'numDeriv', 'officer', 'openssl', 'openxlsx',
            'osmar', 'packrat', 'pan', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest', 'pdc', 'pdftools', 'pillar', 'pkgbuild', 'pkgconfig',
-           'pkgdown', 'pkgload', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'plyr', 'png', 'prabclus', 'praise', 'prettyunits',
+           'pkgdown', 'pkgload', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'pls', 'plyr', 'png', 'prabclus', 'praise', 'prettyunits',
            'pROC', 'processx', 'prodlim', 'profileModel', 'promises', 'proto', 'proxy', 'pryr', 'psych', 'purrr', 'pwr', 'qap', 'qdapDictionaries',
            'qdapRegex', 'qdapTools', 'quadprog', 'Quandl', 'quanteda', 'quantmod', 'quantreg', 'questionr', 'quickcheck', 'qvcalc', 'R.methodsS3',
            'R.oo', 'R.utils', 'R6', 'randomForest', 'RANN', 'raster', 'rbenchmark', 'rbokeh', 'RColorBrewer', 'Rcpp', 'RcppArmadillo', 'RcppEigen',
