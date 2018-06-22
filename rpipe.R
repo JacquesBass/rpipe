@@ -77,7 +77,7 @@ project_files <- function()
     ix <- which(!grepl(rex, pf$script_name))
     if (length(ix) > 0) stop(paste('Wrong script name:', pf$script_name[ix], collapse = '\n'))
 
-    ix <- which(!(sort(unique(gsub(rex, '\\2', pf$script_name))) %in% c('', 'DONTAUTOLOAD', 'FUNCTION', 'GLOBAL', 'SHOW', 'OUTPUT')))
+    ix <- which(!(sort(unique(gsub(rex, '\\2', pf$script_name))) %in% c('', 'AUTOLOAD', 'FUNCTION', 'GLOBAL', 'SHOW', 'OUTPUT')))
     if (length(ix) > 0) stop(paste('Wrong class in filename:', pf$script_name[ix], collapse = '\n'))
 
     pf$title <- sapply(pf$script_name, get_title)
@@ -97,7 +97,7 @@ project_files <- function()
     if (length(ix) > 0) stop(paste('Duplicated script number:', pf$number[duplicated(pf$number)], collapse = '\n'))
 
     pf$class <- rep('code', L)
-    pf$class[gsub(rex, '\\2', pf$script_name) %in% c('', 'DONTAUTOLOAD')] <- 'file'
+    pf$class[gsub(rex, '\\2', pf$script_name) %in% c('', 'AUTOLOAD')] <- 'file'
     pf$class[gsub(rex, '\\2', pf$script_name) == 'OUTPUT'] <- 'outp'
 
     pf$datafr_name <- rep('', L)
@@ -178,7 +178,7 @@ make_all <- function(break_if_no_lock, pf = project_files(), from_Rstudio = FALS
 
                 force_recalc <- TRUE
             } else {
-                if (!grepl('_DONTAUTOLOAD_', pf$script_name[i]))
+                if (grepl('_AUTOLOAD_', pf$script_name[i]))
                 {
                     cat ('Loading', pf$datafr_name[i], '...\n')
 
@@ -281,7 +281,7 @@ if (isRStudio) {
 
                     force_recalc <- TRUE
                 } else {
-                    if (!grepl('_DONTAUTOLOAD_', pf$script_name[i])) pf$build[i] <- 'Load'
+                    if (grepl('_AUTOLOAD_', pf$script_name[i])) pf$build[i] <- 'Load'
                 }
 
                 if (file.exists(pf$datafr_name[i]))
