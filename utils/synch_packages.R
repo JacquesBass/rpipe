@@ -20,9 +20,9 @@ nice <- function(txt)
 
 packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML', 'backports', 'base', 'base64enc', 'BH', 'bibtex', 'bindr',
            'bindrcpp', 'bit', 'bit64', 'bitops', 'blob', 'boot', 'BradleyTerry2', 'brew', 'brglm', 'broom', 'callr', 'car', 'carData', 'caret',
-           'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'checkmate', 'chron', 'Ckmeans.1d.dp', 'class', 'classInt', 'cld2', 'cli', 'cluster',
-           'clv', 'coda', 'codetools', 'coin', 'colorspace', 'colourpicker', 'combinat', 'commonmark', 'compiler', 'config', 'CORElearn', 'crayon',
-           'crosstalk', 'curl', 'CVST', 'darch', 'data.table', 'datasets', 'DBI', 'dbplyr', 'ddalpha', 'debugme', 'deepboost', 'deepnet',
+           'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'checkmate', 'chron', 'Ckmeans.1d.dp', 'class', 'classInt', 'cld2', 'cli', 'clipr',
+           'cluster', 'clv', 'coda', 'codetools', 'coin', 'colorspace', 'colourpicker', 'combinat', 'commonmark', 'compiler', 'config', 'CORElearn',
+           'crayon', 'crosstalk', 'curl', 'CVST', 'darch', 'data.table', 'datasets', 'DBI', 'dbplyr', 'ddalpha', 'debugme', 'deepboost', 'deepnet',
            'dendextend', 'DEoptimR', 'desc', 'devtools', 'DiagrammeR', 'dichromat', 'digest', 'dimRed', 'diptest', 'doParallel', 'dotCall64',
            'downloader', 'dplyr', 'DRR', 'DT', 'dtplyr', 'dtw', 'e1071', 'earth', 'ellipse', 'entropy', 'evaluate', 'extrafont', 'extrafontdb',
            'FactoMineR', 'fastmatch', 'fclust', 'fda', 'ff', 'ffbase', 'fields', 'fImport', 'flashClust', 'flexclust', 'flexmix', 'FNN', 'forcats',
