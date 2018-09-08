@@ -37,10 +37,10 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'maxent', 'mboost', 'mcclust', 'mclust', 'memoise', 'methods', 'Metrics', 'mgcv', 'mice', 'mime', 'miniCRAN', 'miniUI', 'minqa', 'misc3d',
            'mitml', 'mlapi', 'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR', 'multcomp', 'munsell', 'mvtnorm', 'ndjson', 'network',
            'neuralnet', 'NeuralNetTools', 'ngram', 'nlme', 'nloptr', 'NLP', 'NMF', 'nnet', 'nnls', 'nplr', 'numbers', 'numDeriv', 'officer',
-           'openssl', 'openxlsx', 'osmar', 'packrat', 'pan', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest', 'pdc', 'pdftools', 'pillar',
-           'pkgbuild', 'pkgconfig', 'pkgdown', 'pkgload', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'pls', 'plyr', 'png', 'prabclus',
-           'praise', 'prettyunits', 'pROC', 'processx', 'prodlim', 'profileModel', 'promises', 'proto', 'proxy', 'pryr', 'ps', 'psych', 'purrr',
-           'pwr', 'qap', 'qdapDictionaries', 'qdapRegex', 'qdapTools', 'quadprog', 'Quandl', 'quanteda', 'quantmod', 'quantreg', 'questionr',
+           'openssl', 'openxlsx', 'ordinal', 'osmar', 'packrat', 'pan', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest', 'pdc', 'pdftools',
+           'pillar', 'pkgbuild', 'pkgconfig', 'pkgdown', 'pkgload', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'pls', 'plyr', 'png',
+           'prabclus', 'praise', 'prettyunits', 'pROC', 'processx', 'prodlim', 'profileModel', 'promises', 'proto', 'proxy', 'pryr', 'ps', 'psych',
+           'purrr', 'pwr', 'qap', 'qdapDictionaries', 'qdapRegex', 'qdapTools', 'quadprog', 'Quandl', 'quanteda', 'quantmod', 'quantreg', 'questionr',
            'quickcheck', 'qvcalc', 'R.methodsS3', 'R.oo', 'R.utils', 'R6', 'randomForest', 'RANN', 'raster', 'rbenchmark', 'rbokeh', 'RColorBrewer',
            'Rcpp', 'RcppArmadillo', 'RcppEigen', 'RcppExamples', 'RcppParallel', 'RcppRoll', 'RCurl', 'readr', 'readxl', 'recipes', 'recommenderlab',
            'registry', 'rematch', 'reports', 'reprex', 'reshape', 'reshape2', 'reticulate', 'rgexf', 'RgoogleMaps', 'rio', 'rjazz', 'rjson',
@@ -52,8 +52,8 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival', 'tabplot', 'tau', 'tcltk', 'tclust',
            'TeachingDemos', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect', 'tidyverse',
            'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tools', 'transcribeR', 'tree', 'treeClust', 'triangle', 'trimcluster',
-           'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData', 'utf8', 'utils',
-           'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost',
+           'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'ucminf', 'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData', 'utf8',
+           'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost',
            'xgboostExplainer', 'XML', 'xml2', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
 
 
