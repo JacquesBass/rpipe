@@ -77,8 +77,9 @@ project_files <- function()
     ix <- which(!grepl(rex, pf$script_name))
     if (length(ix) > 0) stop(paste('Wrong script name:', pf$script_name[ix], collapse = '\n'))
 
-    ix <- which(!(sort(unique(gsub(rex, '\\2', pf$script_name))) %in% c('', 'AUTOLOAD', 'FUNCTION', 'GLOBAL', 'SHOW', 'OUTPUT')))
-    if (length(ix) > 0) stop(paste('Wrong class in filename:', pf$script_name[ix], collapse = '\n'))
+    class_name <- sort(unique(gsub(rex, '\\2', pf$script_name)))
+    ix <- which(!(class_name %in% c('', 'AUTOLOAD', 'FUNCTION', 'GLOBAL', 'SHOW', 'OUTPUT')))
+    if (length(ix) > 0) stop(paste('Wrong class name:', class_name[ix], collapse = '\n'))
 
     pf$title <- sapply(pf$script_name, get_title)
     names(pf$title) <- NULL
