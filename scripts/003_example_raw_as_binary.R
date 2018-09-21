@@ -2,7 +2,7 @@
 
 
 #>> Typically, we will load a big file slowly (like a csv) and save it as binary to load it faster anytime we need it.
-#>> Typically, that file is not what we will use for training, so we don't want it to load automatically each time be make, ergo DONTAUTOLOAD.
+#>> Typically, that file is not what we will use for training, so we don't want it to load automatically each time we make -> not AUTOLOAD.
 
 #>> And this is when rpipe becomes annoyingly pedantic, you have to do it by declaring a function named build_example_raw_as_binary(), this is
 #>> --------------------------------------------------

@@ -3,7 +3,7 @@
 
 #>> All remarks starting with #>> will be included when the project is exported as .csv
 
-# Any other remark are ignored.
+# Any other remarks are ignored.
 
 #>> A file whose name starts with _GLOBAL_ is supposed to contain global variables ONLY like metaparameters. It should load very fast!
 
