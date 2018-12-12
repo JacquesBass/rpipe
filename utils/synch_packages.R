@@ -30,13 +30,13 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'fracdiff', 'fs', 'functional', 'futile.logger', 'futile.options', 'gbm', 'gclus', 'gdata', 'gdtools', 'gender', 'generics', 'geometry',
            'geosphere', 'ggmap', 'ggplot2', 'ggrepel', 'ggthemes', 'gh', 'gistr', 'git2r', 'glmnet', 'glue', 'gmodels', 'gmp', 'goftest',
            'googlesheets', 'googleVis', 'gower', 'gplots', 'graphics', 'grDevices', 'grid', 'gridBase', 'gridExtra', 'gsubfn', 'gtable', 'gtools',
-           'h2o', 'haven', 'hexbin', 'highlight', 'highr', 'Hmisc', 'hms', 'htmlTable', 'htmltools', 'htmlwidgets', 'httpuv', 'httr', 'hunspell',
-           'ifultools', 'igraph', 'imager', 'influenceR', 'ini', 'inline', 'inum', 'ipred', 'irlba', 'ISOcodes', 'iterators', 'janeaustenr', 'jomo',
-           'jpeg', 'jsonlite', 'kerasR', 'kernlab', 'KernSmooth', 'klaR', 'knitr', 'labeling', 'labelled', 'lambda.r', 'lars', 'lasso2', 'later',
-           'lattice', 'latticeExtra', 'lava', 'lazyeval', 'lda', 'leaflet', 'leaps', 'libcoin', 'lightgbm', 'lme4', 'lmtest', 'locpol', 'logistf',
-           'lpSolve', 'lsa', 'lubridate', 'magic', 'magrittr', 'manipulate', 'mapproj', 'maps', 'maptools', 'markdown', 'MASS', 'Matrix',
-           'MatrixModels', 'maxent', 'mboost', 'mcclust', 'mclust', 'memoise', 'methods', 'Metrics', 'mgcv', 'mice', 'microbenchmark', 'mime',
-           'miniCRAN', 'miniUI', 'minqa', 'misc3d', 'mitml', 'mlapi', 'mlbench', 'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR',
+           'gutenbergr', 'h2o', 'haven', 'hexbin', 'highlight', 'highr', 'Hmisc', 'hms', 'htmlTable', 'htmltools', 'htmlwidgets', 'httpuv', 'httr',
+           'hunspell', 'ifultools', 'igraph', 'imager', 'influenceR', 'ini', 'inline', 'inum', 'ipred', 'irlba', 'ISOcodes', 'iterators',
+           'janeaustenr', 'jomo', 'jpeg', 'jsonlite', 'kerasR', 'kernlab', 'KernSmooth', 'klaR', 'knitr', 'labeling', 'labelled', 'lambda.r', 'lars',
+           'lasso2', 'later', 'lattice', 'latticeExtra', 'lava', 'lazyeval', 'lda', 'leaflet', 'leaps', 'libcoin', 'lightgbm', 'lme4', 'lmtest',
+           'locpol', 'logistf', 'lpSolve', 'lsa', 'lubridate', 'magic', 'magrittr', 'manipulate', 'mapproj', 'maps', 'maptools', 'markdown', 'MASS',
+           'Matrix', 'MatrixModels', 'maxent', 'mboost', 'mcclust', 'mclust', 'memoise', 'methods', 'Metrics', 'mgcv', 'mice', 'microbenchmark',
+           'mime', 'miniCRAN', 'miniUI', 'minqa', 'misc3d', 'mitml', 'mlapi', 'mlbench', 'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR',
            'multcomp', 'munsell', 'mvtnorm', 'mxnet', 'ndjson', 'network', 'neuralnet', 'NeuralNetTools', 'ngram', 'nlme', 'nloptr', 'NLP', 'NMF',
            'nnet', 'nnls', 'nplr', 'numbers', 'numDeriv', 'OAIHarvester', 'officer', 'opencage', 'openssl', 'openxlsx', 'ordinal', 'osmar', 'packrat',
            'pan', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest', 'pdc', 'pdftools', 'pillar', 'pkgbuild', 'pkgconfig', 'pkgdown', 'pkgload',
@@ -55,10 +55,10 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'assertthat', 'audio', 'AzureML
            'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'survival', 'svglite', 'tabplot', 'tau', 'tcltk', 'tclust',
            'TeachingDemos', 'tensor', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect',
            'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tokenizers', 'tools', 'topicmodels',
-           'transcribeR', 'tree', 'treeClust', 'triangle', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'ucminf', 'units',
-           'upclass', 'urca', 'uroot', 'USAboundaries', 'USAboundariesData', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite',
-           'visNetwork', 'waterfalls', 'webshot', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost', 'xgboostExplainer', 'XML', 'xml2',
-           'xopen', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
+           'transcribeR', 'tree', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'twitteR', 'ucminf',
+           'units', 'upclass', 'urca', 'urltools', 'uroot', 'USAboundaries', 'USAboundariesData', 'usethis', 'utf8', 'utils', 'uuid', 'vcd',
+           'viridis', 'viridisLite', 'visNetwork', 'waterfalls', 'webshot', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost',
+           'xgboostExplainer', 'XML', 'xml2', 'xopen', 'xtable', 'xts', 'yaml', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
