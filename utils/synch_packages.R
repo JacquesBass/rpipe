@@ -57,9 +57,9 @@ packs <- c('abind', 'acepack', 'ade4', 'arules', 'askpass', 'assertthat', 'audio
            'textcat', 'tfruns', 'TH.data', 'tibble', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries',
            'tinytex', 'titanic', 'tm', 'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'tree', 'treeClust', 'triangle', 'triebeard',
            'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'ucminf', 'units', 'urca', 'urltools', 'uroot',
-           'USAboundaries', 'USAboundariesData', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'viridis', 'viridisLite', 'visNetwork', 'waterfalls',
-           'webshot', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xtable', 'xts', 'yaml', 'zip', 'zipfR',
-           'zoo')
+           'USAboundaries', 'USAboundariesData', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs', 'viridis', 'viridisLite', 'visNetwork',
+           'waterfalls', 'webshot', 'whisker', 'withr', 'wmtsa', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xtable', 'xts', 'yaml',
+           'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
