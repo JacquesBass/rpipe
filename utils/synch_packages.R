@@ -18,9 +18,9 @@ nice <- function(txt)
 }
 
 
-packs <- c('abind', 'acepack', 'ade4', 'arules', 'askpass', 'assertthat', 'audio', 'AzureML', 'backports', 'base', 'base64enc', 'BH', 'bibtex',
-           'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'bit', 'bit64', 'bitops', 'blob', 'bmp', 'boot', 'BradleyTerry2', 'brew', 'brglm',
-           'broom', 'Cairo', 'callr', 'car', 'carData', 'caret', 'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'checkmate', 'chron',
+packs <- c('abind', 'acepack', 'adagio', 'ade4', 'arules', 'askpass', 'assertthat', 'audio', 'AzureML', 'backports', 'base', 'base64enc', 'BH',
+           'bibtex', 'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'bit', 'bit64', 'bitops', 'blob', 'bmp', 'boot', 'BradleyTerry2', 'brew',
+           'brglm', 'broom', 'Cairo', 'callr', 'car', 'carData', 'caret', 'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'checkmate', 'chron',
            'Ckmeans.1d.dp', 'class', 'classInt', 'cld2', 'cli', 'clipr', 'clisymbols', 'cluster', 'clv', 'coda', 'codetools', 'coin', 'colorspace',
            'colourpicker', 'combinat', 'commonmark', 'compiler', 'config', 'CORElearn', 'covr', 'crayon', 'crosstalk', 'curl', 'CVST', 'data.table',
            'datasets', 'DBI', 'dbplyr', 'ddalpha', 'debugme', 'deepboost', 'deepnet', 'deldir', 'dendextend', 'DEoptimR', 'Deriv', 'desc', 'devtools',
