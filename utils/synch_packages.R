@@ -86,5 +86,5 @@ if (length(todo) > 0)
     print(todo)
     cat('\n')
 
-    sapply(todo, install.packages)
+    install.packages(todo)
 }
