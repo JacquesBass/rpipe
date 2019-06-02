@@ -37,7 +37,7 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'arules', 'askpass', 'asserttha
            'leaps', 'libcoin', 'lightgbm', 'lme4', 'lmtest', 'locpol', 'logistf', 'lpSolve', 'lsa', 'lubridate', 'magic', 'magrittr', 'manipulate',
            'mapproj', 'maps', 'maptools', 'markdown', 'MASS', 'Matrix', 'MatrixModels', 'matrixStats', 'mboost', 'mcclust', 'mclust', 'memoise',
            'methods', 'Metrics', 'mgcv', 'mice', 'microbenchmark', 'mime', 'miniCRAN', 'miniUI', 'minqa', 'misc3d', 'mitml', 'mlapi', 'mlbench',
-           'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR', 'multcomp', 'munsell', 'mvtnorm', 'mxnet', 'ndjson', 'netrankr', 'network',
+           'mnormt', 'ModelMetrics', 'modelr', 'modeltools', 'monitoR', 'multcomp', 'munsell', 'mvtnorm', 'ndjson', 'netrankr', 'network',
            'neuralnet', 'NeuralNetTools', 'ngram', 'nlme', 'nloptr', 'NLP', 'NMF', 'nnet', 'nnls', 'nplr', 'numbers', 'numDeriv', 'OAIHarvester',
            'officer', 'opencage', 'openssl', 'openxlsx', 'ordinal', 'osmar', 'packrat', 'pan', 'parallel', 'party', 'partykit', 'pbapply', 'pbkrtest',
            'pdc', 'pdftools', 'pillar', 'pkgbuild', 'pkgconfig', 'pkgdown', 'pkgload', 'pkgmaker', 'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix',
