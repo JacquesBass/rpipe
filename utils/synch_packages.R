@@ -42,7 +42,7 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'arules', 'askpass', 'asserttha
            'numDeriv', 'OAIHarvester', 'officer', 'opencage', 'openssl', 'openxlsx', 'ordinal', 'osmar', 'packrat', 'pan', 'parallel', 'party',
            'partykit', 'pbapply', 'pbkrtest', 'pdc', 'pdftools', 'phonTools', 'pillar', 'pkgbuild', 'pkgconfig', 'pkgdown', 'pkgload', 'pkgmaker',
            'PKI', 'plogr', 'plotly', 'plotmo', 'plotrix', 'pls', 'plyr', 'png', 'polyclip', 'pool', 'prabclus', 'praise', 'prettyunits', 'pROC',
-           'processx', 'prodlim', 'profileModel', 'progress', 'promises', 'proto', 'proxy', 'pryr', 'ps', 'psych', 'purrr', 'pwr', 'qap',
+           'processx', 'prodlim', 'profileModel', 'progress', 'promises', 'proto', 'proxy', 'proxyC', 'pryr', 'ps', 'psych', 'purrr', 'pwr', 'qap',
            'qdapDictionaries', 'qdapRegex', 'qdapTools', 'qpdf', 'quadprog', 'Quandl', 'quanteda', 'quantmod', 'quantreg', 'questionr', 'qvcalc',
            'R.methodsS3', 'R.oo', 'R.utils', 'R6', 'randomForest', 'RANN', 'raster', 'rbenchmark', 'rbokeh', 'rcmdcheck', 'RColorBrewer', 'Rcpp',
            'RcppArmadillo', 'RcppEigen', 'RcppExamples', 'RcppParallel', 'RcppProgress', 'RcppRoll', 'RCurl', 'readbitmap', 'readr', 'readxl',
