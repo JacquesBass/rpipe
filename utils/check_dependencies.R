@@ -5,7 +5,7 @@ dependedencies <- function(pak, ip = .installed.packs., suggests = FALSE)
 {
     ix <- which(ip$Package == pak)
 
-    if (length(ix) != 1) stop(paste('Package', pak, 'is not installed.'))
+    if (length(ix) == 0) stop(paste('Package', pak, 'is not installed.'))
 
     if (suggests) all <- c(ip$Depends[ix], ip$Imports[ix], ip$LinkingTo[ix], ip$Suggests[ix])
     else          all <- c(ip$Depends[ix], ip$Imports[ix], ip$LinkingTo[ix])
