@@ -1,7 +1,7 @@
 .installed.packs. <- data.frame(installed.packages(), stringsAsFactors = FALSE)
 
 
-dependedencies <- function(pak, ip = .installed.packs., suggests = FALSE)
+dependencies <- function(pak, ip = .installed.packs., suggests = FALSE)
 {
     ix <- which(ip$Package == pak)
 
@@ -26,12 +26,12 @@ dependedencies <- function(pak, ip = .installed.packs., suggests = FALSE)
     all
 }
 
-paks <- .installed.packs.$Package
+packages <- .installed.packs.$Package
 
-for (pak in paks) {
-    dep <- dependedencies(pak)
+for (pak in packages) {
+    dep <- dependencies(pak)
 
-    ix <- which(!(dep %in% paks))
+    ix <- which(!(dep %in% packages))
 
     if (length(ix) > 0) {
         cat(pak, ':', dep, '\n')
