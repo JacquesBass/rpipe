@@ -31,7 +31,7 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'AlgDesign', 'arules', 'askpass
            'fastmatch', 'fclust', 'fda', 'ff', 'fields', 'fImport', 'flashClust', 'flexclust', 'flexmix', 'float', 'FNN', 'forcats', 'foreach',
            'forecast', 'foreign', 'formatR', 'Formula', 'formula.tools', 'fpc', 'fracdiff', 'fs', 'functional', 'futile.logger', 'futile.options',
            'gbm', 'gbRd', 'gclus', 'gdata', 'gdtools', 'gender', 'generics', 'geometry', 'geosphere', 'ggforce', 'ggfortify', 'ggmap', 'ggplot2',
-           'ggpubr', 'ggraph', 'ggrepel', 'ggsci', 'ggsignif', 'ggthemes', 'gh', 'gistr', 'git2r', 'glue', 'gmodels', 'gmp', 'goftest',
+           'ggpubr', 'ggraph', 'ggrepel', 'ggsci', 'ggsignif', 'ggthemes', 'gh', 'gistr', 'git2r', 'gitcreds', 'glue', 'gmodels', 'gmp', 'goftest',
            'googlesheets', 'googleVis', 'gower', 'GPArotation', 'gplots', 'graphics', 'graphlayouts', 'grDevices', 'grid', 'gridBase', 'gridExtra',
            'gsubfn', 'gtable', 'gtools', 'gutenbergr', 'h2o', 'haven', 'hdf5r', 'hexbin', 'highlight', 'highr', 'Hmisc', 'hms', 'htmlTable',
            'htmltools', 'htmlwidgets', 'httpcode', 'httpuv', 'httr', 'hunspell', 'igraph', 'imager', 'influenceR', 'ini', 'inline', 'inum', 'ipred',
