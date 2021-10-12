@@ -63,13 +63,13 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'AlgDesign', 'arules', 'ash', '
            'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spatstat', 'spatstat.core', 'spatstat.data', 'spatstat.geom', 'spatstat.linnet',
            'spatstat.sparse', 'spatstat.utils', 'spData', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'statmod', 'statnet.common', 'stats',
            'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys',
-           'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor', 'tensorflow', 'testthat', 'text2vec', 'textcat', 'textshaping',
-           'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline',
-           'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim', 'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle',
-           'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urltools',
-           'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs', 'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'waldo',
-           'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts',
-           'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
+           'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor', 'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat',
+           'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff',
+           'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim', 'tokenizers', 'tools', 'topicmodels', 'transcribeR',
+           'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf',
+           'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs', 'vegan', 'viridis', 'viridisLite', 'visNetwork',
+           'vroom', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr',
+           'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
