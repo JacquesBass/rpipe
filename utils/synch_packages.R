@@ -18,9 +18,9 @@ nice <- function(txt)
 }
 
 
-packs <- c('abind', 'acepack', 'adagio', 'ade4', 'AlgDesign', 'arules', 'ash', 'askpass', 'assertthat', 'AUC', 'audio', 'backports', 'base',
-           'base64enc', 'BH', 'bibtex', 'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'Biobase', 'BiocGenerics', 'BiocManager', 'BiocVersion',
-           'bit', 'bit64', 'bitops', 'blob', 'bmp', 'boot', 'BradleyTerry2', 'brew', 'brglm', 'brio', 'broom', 'bslib', 'ca', 'cachem',
+packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules', 'ash', 'askpass', 'assertthat', 'AUC', 'audio', 'backports',
+           'base', 'base64enc', 'BH', 'bibtex', 'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'Biobase', 'BiocGenerics', 'BiocManager',
+           'BiocVersion', 'bit', 'bit64', 'bitops', 'blob', 'bmp', 'boot', 'BradleyTerry2', 'brew', 'brglm', 'brio', 'broom', 'bslib', 'ca', 'cachem',
            'CAinterprTools', 'Cairo', 'callr', 'car', 'carData', 'caret', 'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'ChannelAttribution',
            'checkmate', 'chron', 'Ckmeans.1d.dp', 'class', 'classInt', 'cld2', 'cli', 'clipr', 'clisymbols', 'cluster', 'clv', 'coda', 'codetools',
            'coin', 'colorspace', 'colourpicker', 'combinat', 'commonmark', 'compiler', 'config', 'conjoint', 'conquer', 'CORElearn', 'corrplot',
@@ -53,23 +53,23 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'AlgDesign', 'arules', 'ash', '
            'purrr', 'pwr', 'qap', 'qdapDictionaries', 'qdapRegex', 'qdapTools', 'qpdf', 'quadprog', 'Quandl', 'quanteda', 'quantmod', 'quantreg',
            'questionr', 'qvcalc', 'R.cache', 'R.methodsS3', 'R.oo', 'R.utils', 'R6', 'ragg', 'rainbow', 'randomForest', 'RANN', 'rappdirs', 'raster',
            'ratelimitr', 'rbenchmark', 'rbibutils', 'rbokeh', 'rcmdcheck', 'RcmdrMisc', 'RColorBrewer', 'Rcpp', 'RcppArmadillo', 'RcppEigen',
-           'RcppExamples', 'RcppParallel', 'RcppProgress', 'RcppRoll', 'RCurl', 'Rdpack', 'readbitmap', 'readr', 'readstata13', 'readxl', 'recipes',
-           'recommenderlab', 'recosystem', 'registry', 'rematch', 'rematch2', 'remotes', 'reprex', 'reshape', 'reshape2', 'reticulate', 'rex', 'rfm',
-           'rgdal', 'rgexf', 'RgoogleMaps', 'RhpcBLASctl', 'rio', 'rjazz', 'rjson', 'RJSONIO', 'rlang', 'rle', 'rmarkdown', 'Rmixmod', 'Rmpfr',
-           'rngtools', 'ROAuth', 'robustbase', 'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient', 'rsconnect',
-           'Rserve', 'rsparse', 'RSpectra', 'RSQLite', 'rstatix', 'rstudioapi', 'Rttf2pt1', 'RUnit', 'rversions', 'rvest', 'rvg', 'rworldmap', 's2',
-           'sandwich', 'sass', 'satellite', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr', 'seriation', 'servr', 'sessioninfo', 'sf',
-           'sfsmisc', 'shape', 'shiny', 'shinyBS', 'shinydashboard', 'shinyjs', 'signal', 'slam', 'sn', 'sna', 'snow', 'SnowballC', 'soundgen',
-           'sourcetools', 'sp', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spatstat', 'spatstat.core', 'spatstat.data', 'spatstat.geom',
-           'spatstat.linnet', 'spatstat.sparse', 'spatstat.utils', 'spData', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'statmod',
-           'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'styler', 'survey',
-           'survival', 'svglite', 'sys', 'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor', 'tensorflow', 'terra', 'testthat',
-           'text2vec', 'textcat', 'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph', 'tidyr', 'tidyselect', 'tidytext',
-           'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim', 'tokenizers', 'tools', 'topicmodels',
-           'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb',
-           'ucminf', 'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs', 'vegan', 'viridis', 'viridisLite',
-           'visNetwork', 'vroom', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen',
-           'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
+           'RcppExamples', 'RcppParallel', 'RcppProgress', 'RcppRoll', 'RcppTOML', 'RCurl', 'Rdpack', 'readbitmap', 'readr', 'readstata13', 'readxl',
+           'recipes', 'recommenderlab', 'recosystem', 'registry', 'rematch', 'rematch2', 'remotes', 'reprex', 'reshape', 'reshape2', 'reticulate',
+           'rex', 'rfm', 'rgdal', 'rgexf', 'RgoogleMaps', 'RhpcBLASctl', 'rio', 'rjazz', 'rjson', 'RJSONIO', 'rlang', 'rle', 'rmarkdown', 'Rmixmod',
+           'Rmpfr', 'rngtools', 'ROAuth', 'robustbase', 'ROCR', 'Rook', 'roxygen2', 'rpart', 'rpart.plot', 'rprojroot', 'rredis', 'RSclient',
+           'rsconnect', 'Rserve', 'rsparse', 'RSpectra', 'RSQLite', 'rstatix', 'rstudioapi', 'Rttf2pt1', 'RUnit', 'rversions', 'rvest', 'rvg',
+           'rworldmap', 's2', 'sandwich', 'sass', 'satellite', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr', 'seriation', 'servr',
+           'sessioninfo', 'sf', 'sfsmisc', 'shape', 'shiny', 'shinyBS', 'shinydashboard', 'shinyjs', 'signal', 'slam', 'sn', 'sna', 'snow',
+           'SnowballC', 'soundgen', 'sourcetools', 'sp', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spatstat', 'spatstat.core',
+           'spatstat.data', 'spatstat.geom', 'spatstat.linnet', 'spatstat.sparse', 'spatstat.utils', 'spData', 'splines', 'splus2R', 'sqldf',
+           'SQUAREM', 'stabs', 'statmod', 'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr',
+           'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys', 'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor',
+           'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat', 'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph',
+           'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim',
+           'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR',
+           'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs',
+           'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud', 'xfun',
+           'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
