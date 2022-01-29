@@ -68,8 +68,8 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules'
            'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim',
            'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR',
            'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs',
-           'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud', 'xfun',
-           'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
+           'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk',
+           'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
