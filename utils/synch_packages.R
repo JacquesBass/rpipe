@@ -61,15 +61,16 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules'
            'rworldmap', 's2', 'sandwich', 'sass', 'satellite', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr', 'seriation', 'servr',
            'sessioninfo', 'sf', 'sfsmisc', 'shape', 'shiny', 'shinyBS', 'shinydashboard', 'shinyjs', 'signal', 'slam', 'sn', 'sna', 'snow',
            'SnowballC', 'soundgen', 'sourcetools', 'sp', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spatstat', 'spatstat.core',
-           'spatstat.data', 'spatstat.geom', 'spatstat.linnet', 'spatstat.sparse', 'spatstat.utils', 'spData', 'splines', 'splus2R', 'sqldf',
-           'SQUAREM', 'stabs', 'statmod', 'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr',
-           'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys', 'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor',
-           'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat', 'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph',
-           'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm', 'tmvnsim',
-           'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne', 'TSP', 'TTR',
-           'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs',
-           'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk',
-           'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
+           'spatstat.data', 'spatstat.geom', 'spatstat.linnet', 'spatstat.random', 'spatstat.sparse', 'spatstat.utils', 'spData', 'splines',
+           'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'statmod', 'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi',
+           'stringr', 'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys', 'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos',
+           'tensor', 'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat', 'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble',
+           'tidygraph', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timeDate', 'timeline', 'timeSeries', 'tinytex', 'titanic', 'tm',
+           'tmvnsim', 'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne',
+           'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid',
+           'vcd', 'vctrs', 'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'waterfalls', 'webshot', 'whisker',
+           'withr', 'wk', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR',
+           'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
