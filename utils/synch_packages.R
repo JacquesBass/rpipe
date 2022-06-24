@@ -19,7 +19,7 @@ nice <- function(txt)
 
 
 packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules', 'ash', 'askpass', 'assertthat', 'AUC', 'audio', 'backports',
-           'base', 'base64enc', 'BH', 'bibtex', 'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'Biobase', 'BiocGenerics', 'BiocManager',
+           'base', 'base64enc', 'BH', 'bibtex', 'bigmemory', 'bigmemory.sri', 'bindr', 'bindrcpp', 'binom', 'Biobase', 'BiocGenerics', 'BiocManager',
            'BiocVersion', 'bit', 'bit64', 'bitops', 'blob', 'bmp', 'boot', 'BradleyTerry2', 'brew', 'brglm', 'brio', 'broom', 'bslib', 'ca', 'cachem',
            'CAinterprTools', 'Cairo', 'callr', 'car', 'carData', 'caret', 'caretEnsemble', 'catboost', 'caTools', 'cellranger', 'ChannelAttribution',
            'checkmate', 'chron', 'Ckmeans.1d.dp', 'class', 'classInt', 'cld2', 'cli', 'clipr', 'clisymbols', 'cluster', 'clv', 'coda', 'codetools',
