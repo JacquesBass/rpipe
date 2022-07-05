@@ -36,7 +36,7 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules'
            'globals', 'glue', 'gmodels', 'gmp', 'goftest', 'googledrive', 'googlesheets4', 'googleVis', 'gower', 'GPArotation', 'gplots', 'graphics',
            'graphlayouts', 'grDevices', 'grid', 'gridBase', 'gridExtra', 'gsubfn', 'gtable', 'gtools', 'gutenbergr', 'h2o', 'hardhat', 'haven',
            'hdf5r', 'hdrcde', 'here', 'hexbin', 'highlight', 'highr', 'Hmisc', 'hms', 'htmlTable', 'htmltools', 'htmlwidgets', 'httpcode', 'httpuv',
-           'httr', 'hunspell', 'ids', 'igraph', 'influenceR', 'ini', 'inline', 'inum', 'ipred', 'irlba', 'isoband', 'ISOcodes', 'iterators',
+           'httr', 'hunspell', 'ids', 'igraph', 'influenceR', 'ini', 'inline', 'interp', 'inum', 'ipred', 'irlba', 'isoband', 'ISOcodes', 'iterators',
            'janeaustenr', 'jomo', 'jpeg', 'jquerylib', 'jsonlite', 'kerasR', 'kernlab', 'KernSmooth', 'klaR', 'knitr', 'ks', 'labeling', 'labelled',
            'lambda.r', 'languageserver', 'lars', 'lasso2', 'later', 'lattice', 'latticeExtra', 'lava', 'lazyeval', 'lda', 'leaflet',
            'leaflet.providers', 'leaps', 'lgr', 'libcoin', 'lifecycle', 'lightgbm', 'linprog', 'lintr', 'listenv', 'lme4', 'lmtest', 'lobstr',
