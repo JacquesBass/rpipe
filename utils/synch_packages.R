@@ -71,8 +71,8 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'arules'
            'tmvnsim', 'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsne',
            'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urlchecker', 'urltools', 'uroot', 'usethis', 'utf8',
            'utils', 'uuid', 'vcd', 'vctrs', 'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'waterfalls', 'webshot',
-           'whisker', 'withr', 'wk', 'wordcloud', 'xfun', 'xgboost', 'XML', 'xml2', 'xmlparsedata', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml',
-           'zeallot', 'zip', 'zipfR', 'zoo')
+           'whisker', 'withr', 'wk', 'wordcloud', 'writexl', 'xfun', 'xgboost', 'XML', 'xml2', 'xmlparsedata', 'xopen', 'xplorerr', 'xtable', 'xts',
+           'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
