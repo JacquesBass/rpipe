@@ -64,17 +64,18 @@ packs <- c('abind', 'acepack', 'adagio', 'ade4', 'admisc', 'AlgDesign', 'alphava
            'RSpectra', 'RSQLite', 'rstatix', 'rstudioapi', 'Rttf2pt1', 'RUnit', 'rversions', 'rvest', 'rvg', 'rworldmap', 's2', 'sandwich', 'sass',
            'satellite', 'scales', 'scatterplot3d', 'seewave', 'segmented', 'selectr', 'seriation', 'servr', 'sessioninfo', 'sf', 'sfsmisc', 'shades',
            'shape', 'shiny', 'shinyBS', 'shinydashboard', 'shinyjs', 'signal', 'SimDesign', 'slam', 'slider', 'sn', 'sna', 'snow', 'SnowballC',
-           'soundgen', 'sourcetools', 'sp', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'spatial', 'spatstat', 'spatstat.data', 'spatstat.explore',
-           'spatstat.geom', 'spatstat.linnet', 'spatstat.model', 'spatstat.random', 'spatstat.sparse', 'spatstat.univar', 'spatstat.utils', 'spData',
-           'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'stationaRy', 'statmod', 'statnet.common', 'stats', 'stats4', 'stopwords', 'streamR',
-           'stringdist', 'stringi', 'stringr', 'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys', 'systemfonts', 'tau', 'tcltk',
-           'tclust', 'TeachingDemos', 'tensor', 'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat', 'textshaping', 'tfautograph', 'tfruns',
-           'TH.data', 'tibble', 'tidygraph', 'tidyquant', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse', 'tiff', 'timechange', 'timeDate',
-           'timeSeries', 'timetk', 'tinytex', 'titanic', 'tm', 'tmvnsim', 'tokenizers', 'tools', 'topicmodels', 'transcribeR', 'treeClust',
-           'treemapify', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsfeatures', 'tsne', 'TSP', 'TTR', 'tuneR', 'tweenr', 'twitteR', 'tzdb',
-           'ucminf', 'units', 'urca', 'urlchecker', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd', 'vctrs', 'vegan', 'viridis',
-           'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'warp', 'waterfalls', 'webshot', 'whisker', 'withr', 'wk', 'wordcloud',
-           'writexl', 'xfun', 'xgboost', 'XML', 'xml2', 'xmlparsedata', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml', 'zeallot', 'zip', 'zipfR', 'zoo')
+           'soundgen', 'sourcetools', 'sp', 'spacyr', 'spam', 'SparseM', 'sparsepp', 'sparsevctrs', 'spatial', 'spatstat', 'spatstat.data',
+           'spatstat.explore', 'spatstat.geom', 'spatstat.linnet', 'spatstat.model', 'spatstat.random', 'spatstat.sparse', 'spatstat.univar',
+           'spatstat.utils', 'spData', 'splines', 'splus2R', 'sqldf', 'SQUAREM', 'stabs', 'stationaRy', 'statmod', 'statnet.common', 'stats',
+           'stats4', 'stopwords', 'streamR', 'stringdist', 'stringi', 'stringr', 'strucchange', 'styler', 'survey', 'survival', 'svglite', 'sys',
+           'systemfonts', 'tau', 'tcltk', 'tclust', 'TeachingDemos', 'tensor', 'tensorflow', 'terra', 'testthat', 'text2vec', 'textcat',
+           'textshaping', 'tfautograph', 'tfruns', 'TH.data', 'tibble', 'tidygraph', 'tidyquant', 'tidyr', 'tidyselect', 'tidytext', 'tidyverse',
+           'tiff', 'timechange', 'timeDate', 'timeSeries', 'timetk', 'tinytex', 'titanic', 'tm', 'tmvnsim', 'tokenizers', 'tools', 'topicmodels',
+           'transcribeR', 'treeClust', 'treemapify', 'triangle', 'triebeard', 'trimcluster', 'tseries', 'tsfeatures', 'tsne', 'TSP', 'TTR', 'tuneR',
+           'tweenr', 'twitteR', 'tzdb', 'ucminf', 'units', 'urca', 'urlchecker', 'urltools', 'uroot', 'usethis', 'utf8', 'utils', 'uuid', 'vcd',
+           'vctrs', 'vegan', 'viridis', 'viridisLite', 'visNetwork', 'vroom', 'vscDebugger', 'waldo', 'warp', 'waterfalls', 'webshot', 'whisker',
+           'withr', 'wk', 'wordcloud', 'writexl', 'xfun', 'xgboost', 'XML', 'xml2', 'xmlparsedata', 'xopen', 'xplorerr', 'xtable', 'xts', 'yaml',
+           'zeallot', 'zip', 'zipfR', 'zoo')
 
 
 if (length(packs) != length(unique(packs))) stop('Duplicated.')
